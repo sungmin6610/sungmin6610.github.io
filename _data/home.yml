@@ -10,11 +10,11 @@ navbar_entries:
 
 project_entries:
   - title: Python Programing Study
-    url: overview-post
-    desc: This is my Python Programing study records.
+    url: python-study-hub
+    desc: 파이썬 기초부터 API 활용, 게임 제작까지의 모든 학습 과정.
 
   - title: C# Programing Study
-    url: overview-post
+    url: csharp-study-hub
     desc: This is my C# Programing study records.
 
   - title: C Programing Study

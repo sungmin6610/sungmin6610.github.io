@@ -2,6 +2,7 @@
 layout: post
 title: "Python 오픈 API를 활용한 끝말잇기 게임 만들기"
 date: 2026-05-07
+category: Python Programing Study
 ---
 
 ```python

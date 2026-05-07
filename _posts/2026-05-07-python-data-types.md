@@ -2,6 +2,7 @@
 layout: post
 title: "파이썬 기초 자료형 정리"
 date: 2026-05-07
+category: Python Programing Study
 ---
 
 #  파이썬(Python)

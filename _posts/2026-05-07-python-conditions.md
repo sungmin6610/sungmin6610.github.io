@@ -2,6 +2,7 @@
 layout: post
 title: "파이썬 조건문 정리"
 date: 2026-05-07
+category: Python Programing Study
 ---
 
 # 조건문

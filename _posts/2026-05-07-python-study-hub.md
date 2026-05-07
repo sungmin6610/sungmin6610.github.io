@@ -2,7 +2,7 @@
 layout: post
 title: "Python Programming Study: 전체 기록"
 date: 2026-05-07
-categories: [Development, Python]
+permalink: /python-hub/
 ---
 
 ## 🐍 파이썬 학습 로드맵

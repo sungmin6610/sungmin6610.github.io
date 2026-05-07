@@ -10,7 +10,7 @@ navbar_entries:
 
 project_entries:
   - title: Python Programing Study
-    url: python-study-hub
+    url: /python-hub/
     desc: 파이썬 기초부터 API 활용, 게임 제작까지의 모든 학습 과정.
 
   - title: C# Programing Study

@@ -1,0 +1,56 @@
+<script>
+(function() {
+  // Hover any internal post link to see a small preview card with title,
+  // excerpt and date. Pulls from /search.json which is a Jekyll-generated
+  // index of all posts.
+  var postIndex = null;
+  var loading = null;
+
+  function loadIndex() {
+    if (loading) return loading;
+    loading = fetch('{{ "/search.json" | relative_url }}')
+      .then(function(r) { return r.ok ? r.json() : []; })
+      .then(function(data) { postIndex = data; return data; })
+      .catch(function() { postIndex = []; return []; });
+    return loading;
+  }
+
+  var card = document.createElement('div');
+  card.className = 'link-preview';
+  document.body.appendChild(card);
+  var hideTimer;
+
+  function show(link, post) {
+    card.innerHTML =
+      '<div class="lp-title">' + escape(post.title) + '</div>' +
+      (post.excerpt ? '<div class="lp-excerpt">' + escape(post.excerpt) + '</div>' : '') +
+      '<div class="lp-meta">' + escape(post.date || '') + '</div>';
+    var rect = link.getBoundingClientRect();
+    card.style.top = (window.scrollY + rect.bottom + 8) + 'px';
+    card.style.left = Math.max(12, window.scrollX + rect.left) + 'px';
+    card.classList.add('visible');
+  }
+  function hide() {
+    hideTimer = setTimeout(function() { card.classList.remove('visible'); }, 100);
+  }
+  function escape(s) {
+    return String(s || '').replace(/[&<>"']/g, function(c) {
+      return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+    });
+  }
+
+  document.querySelectorAll('.page-content a[href^="/"], .page-content a[href^="{{ site.url }}"]').forEach(function(link) {
+    link.addEventListener('mouseenter', function() {
+      clearTimeout(hideTimer);
+      loadIndex().then(function(idx) {
+        var href = link.getAttribute('href').replace('{{ site.url }}', '');
+        var match = idx.find(function(p) { return p.url === href || p.url === href + '/'; });
+        if (match) show(link, match);
+      });
+    });
+    link.addEventListener('mouseleave', hide);
+  });
+  card.addEventListener('mouseenter', function() { clearTimeout(hideTimer); });
+  card.addEventListener('mouseleave', hide);
+})();
+</script>

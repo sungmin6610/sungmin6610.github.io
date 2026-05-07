@@ -1,0 +1,73 @@
+title: Moonwalk
+author: Abhinav Saxena
+url: https://www.abhinavsaxena.com # root address of the site
+baseurl: "/moonwalk/" # set to "/moonwalk" if hosting under a project subpath
+description: > # description of the site (multiple lines allowed)
+  Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
+
+permalink: /:slug
+
+twitter:
+  username: abhinav # update or delete this
+  card: summary_large_image
+
+#theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
+remote_theme: abhinavs/moonwalk
+
+theme_config:
+  appearance: "dark" # can be "light", "dark" or "auto"
+  appearance_toggle: true # if appearance can be switched by user
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: true # show blog description
+  show_navbar: true # show horizontal navbar
+  show_footer: true # show footer links in home page,add in _data/home.yml
+  show_copyright: true # show copyright notice in footer
+  # following keys are using to create home layout
+  show_projects: true # show projects as cards, add in _data/home.yml
+  show_blog: true # show blog posts added in _posts
+  show_old_projects: true # show old projects as cards, add in _data/home.yml
+  show_misc_list: false # show generic vertical list for misc details, add _data/home.yml
+  show_reading_time: true # show number of words and reading time in the blog posts
+  show_tags: true # show tags in a blog posts
+  show_code_copy: true # show copy button on code blocks
+  show_progress_bar: true # show reading progress bar on posts
+  show_back_to_top: true # show back-to-top button
+  show_post_nav: true # show prev/next links on posts
+  show_toc: true # allow per-post table of contents via toc: true front matter
+  show_footnote_tooltips: true # show footnote text on hover instead of scrolling to bottom
+  show_link_previews: true # show preview cards when hovering internal post links
+  # options for "home" page
+  home:
+    title_projects: Portfolio
+    title_misc_list: Details
+    title_blog: Blog
+    title_old_projects: Old Projects
+
+soopr:
+  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+
+highlighter: rouge
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-soopr-seo-tag
+  - jekyll-markdown-output
+  - jekyll-llms-output
+
+# Emit a clean .md sibling for each post (e.g. /foo -> /foo.md) so AI agents
+# can fetch source Markdown instead of parsing HTML. Set enabled: false to disable.
+markdown_output:
+  collections: [posts]
+
+# Emit /llms.txt (curated index) and /llms-full.txt (full content) so agents
+# can discover and ingest the site. See https://llmstxt.org for the spec.
+llms_output:
+  index:
+    collections: [posts]
+  full:
+    collections: [posts]
+    respect_markdown_output: true

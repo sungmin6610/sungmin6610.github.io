@@ -1,0 +1,61 @@
+<div class="search">
+  <input type="search" id="search-input" class="search-input" placeholder="Search posts..." aria-label="Search posts" autocomplete="off">
+  <ul id="search-results" class="search-results" hidden></ul>
+</div>
+
+<script>
+(function() {
+  var input = document.getElementById('search-input');
+  var list = document.getElementById('search-results');
+  if (!input || !list) return;
+
+  var index = null;
+  function loadIndex() {
+    return fetch('{{ "/search.json" | relative_url }}')
+      .then(function(r) { return r.ok ? r.json() : []; })
+      .then(function(data) { index = data; return data; });
+  }
+
+  function score(p, q) {
+    var s = 0;
+    var ql = q.toLowerCase();
+    if ((p.title || '').toLowerCase().indexOf(ql) !== -1) s += 5;
+    if ((p.tags || []).some(function(t) { return t.toLowerCase().indexOf(ql) !== -1; })) s += 3;
+    if ((p.excerpt || '').toLowerCase().indexOf(ql) !== -1) s += 1;
+    return s;
+  }
+  function escape(s) {
+    return String(s || '').replace(/[&<>"']/g, function(c) {
+      return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+    });
+  }
+  function render(results, q) {
+    if (!results.length) {
+      list.innerHTML = '<li class="search-empty">No matches for "' + escape(q) + '"</li>';
+      list.hidden = false;
+      return;
+    }
+    list.innerHTML = results.slice(0, 8).map(function(p) {
+      return '<li class="search-result">' +
+        '<a href="' + escape(p.url) + '">' +
+        '<span class="search-result-title">' + escape(p.title) + '</span>' +
+        '<span class="search-result-date">' + escape(p.date) + '</span>' +
+        '</a></li>';
+    }).join('');
+    list.hidden = false;
+  }
+
+  input.addEventListener('input', function() {
+    var q = input.value.trim();
+    if (!q) { list.hidden = true; list.innerHTML = ''; return; }
+    var run = function() {
+      var hits = index.map(function(p) { return [score(p, q), p]; })
+                      .filter(function(r) { return r[0] > 0; })
+                      .sort(function(a, b) { return b[0] - a[0]; })
+                      .map(function(r) { return r[1]; });
+      render(hits, q);
+    };
+    if (!index) loadIndex().then(run); else run();
+  });
+})();
+</script>

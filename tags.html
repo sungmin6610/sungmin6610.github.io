@@ -1,0 +1,41 @@
+---
+layout: default
+title: Tags
+permalink: /tags
+---
+
+<a href="{{ "/" | relative_url }}" class="back-link" aria-label="Go back">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+</a>
+
+<h1>Tags</h1>
+
+{% assign tags = site.tags | sort %}
+
+<div class="tag-cloud">
+  {% for tag in tags %}
+    {% assign count = tag[1].size %}
+    <a href="#{{ tag[0] | slugify }}" class="tag tag-cloud-item" data-count="{{ count }}" style="font-size: {{ count | times: 0.05 | plus: 0.78 }}rem;">
+      {{ tag[0] }}<span class="tag-count">{{ count }}</span>
+    </a>
+  {% endfor %}
+</div>
+
+{% for tag in tags %}
+  <section class="tag-section">
+    <h2 id="{{ tag[0] | slugify }}" class="tag-section-title">
+      {{ tag[0] }}
+      <span class="tag-section-count">{{ tag[1].size }} {% if tag[1].size == 1 %}post{% else %}posts{% endif %}</span>
+    </h2>
+    <ul>
+      {% for post in tag[1] %}
+        <li class="post-list-item">
+          <span class="home-date">{{ post.date | date: site.theme_config.date_format }}&raquo;</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

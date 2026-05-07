@@ -30,20 +30,12 @@ project_entries:
     desc: 
 
 footer_entries:
-  - title: abhinav's homepage
-    url: https://www.abhinav.co
-
-  - title: twitter
-    url: https://twitter.com/abhinav
-
   - title: github
-    url: https://github.com/abhinavs
+    url: https://github.com/sungmin6610
 
-  - title: feed
-    url: feed.xml
+  - title: email
+    url: seungmin6610@naver.com
 
-  - title: llms.txt
-    url: llms.txt
 
 misc_entries:
   - title: this is an example vertical list

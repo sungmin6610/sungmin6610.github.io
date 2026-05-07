@@ -1,5 +1,5 @@
 title: Sungmin's archive
-author: Abhinav Saxena
+author: Sungmin Song
 url: "https://sungmin6610.github.io" # root address of the site
 baseurl: "" # set to "/moonwalk" if hosting under a project subpath
 description: > # description of the site (multiple lines allowed)
@@ -7,9 +7,6 @@ description: > # description of the site (multiple lines allowed)
 
 permalink: /:slug
 
-twitter:
-  username: abhinav # update or delete this
-  card: summary_large_image
 
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
 remote_theme: abhinavs/moonwalk

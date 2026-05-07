@@ -1,7 +1,7 @@
 title: Sungmin's archive
 author: Abhinav Saxena
 url: "https://sungmin6610.github.io" # root address of the site
-baseurl: "/moonwalk/" # set to "/moonwalk" if hosting under a project subpath
+baseurl: "" # set to "/moonwalk" if hosting under a project subpath
 description: > # description of the site (multiple lines allowed)
   "Software & Semiconductor Equipment Data Management Log. Building a strong mind and body."
 

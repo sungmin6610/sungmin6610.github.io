@@ -9,21 +9,21 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: Project 1
+  - title: Python Programing Study
     url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+    desc: This is my Python Programing study records.
 
-  - title: Project 2
+  - title: C# Programing Study
     url: overview-post
-    desc: Projects are shown in card layout
+    desc: This is my C# Programing study records.
 
-  - title: Project 3
+  - title: C Programing Study
     url: overview-post
-    desc: You can control visibility from _config.yml file
+    desc: This is my C Programing study records.
 
-  - title: Project 4
+  - title: Body Building Log
     url: overview-post
-    desc: This project uses highlight markup, configured in _data/home.yml
+    desc: A Project to build my strong body.
     highlight: WIP
 
   - title: Project 5

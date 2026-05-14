@@ -21,10 +21,6 @@ project_entries:
     url: overview-post
     desc: This is my C Programing study records.
 
-  - title: Body Building Log
-    url: overview-post
-    desc: My Exercise Log.
-
   - title: Semiconductor Equipment Data Management
     url: overview-post
     desc: 

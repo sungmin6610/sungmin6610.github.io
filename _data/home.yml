@@ -15,15 +15,15 @@ project_entries:
 
   - title: C# Programing Study
     url: csharp-study-hub
-    desc: This is my C# Programing study records.
+    desc: C# 언어 기초 및 .NET 프레임워크 학습 기록
 
   - title: C Programing Study
     url: overview-post
-    desc: This is my C Programing study records.
+    desc: C 언어를 이용한 시스템 프로그래밍 기초 및 실습 기록
 
   - title: Semiconductor Equipment Data Management
     url: overview-post
-    desc: 
+    desc: 반도체 장비 데이터 분석 및 SQL 관리 기법 공부
 
 footer_entries:
   - title: github

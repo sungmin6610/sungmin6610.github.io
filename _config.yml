@@ -3,7 +3,7 @@ author: Sungmin Song
 url: "https://sungmin6610.github.io" # root address of the site
 baseurl: "" # set to "/moonwalk" if hosting under a project subpath
 description: > # description of the site (multiple lines allowed)
-  "Software & Semiconductor Equipment Data Management Log. Building a strong mind and body."
+  "Software & Semiconductor Equipment Data Management Log."
 
 permalink: /:slug
 

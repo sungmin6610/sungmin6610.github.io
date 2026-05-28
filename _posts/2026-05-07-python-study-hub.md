@@ -18,3 +18,6 @@ permalink: /python-hub/
 
 ### 3. 미니 프로젝트
 * [오픈 API 활용 끝말잇기 게임]({% post_url 2026-05-07-korean-word-game %})
+
+### 3. Lengchain
+* [Lengchain 핵심요약]({% post_url 2026-05-28-lengchain-summary %})

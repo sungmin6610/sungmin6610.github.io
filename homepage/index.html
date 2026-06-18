@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko" class="theme-bento">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio Skeleton</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Premium developer portfolio skeleton featuring 5 interchangeable design themes. Live switcher preview.">
+    <meta name="keywords" content="Portfolio, Skeleton UI, Web Design, Neo-Brutalisme, Glassmorphism, Retro Terminal, Minimalist, Bento Grid">
+    
+    <!-- Google Fonts for diverse themes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display (Minimal), Outfit (Glass/Bento), Fira Code (Terminal), Plus Jakarta Sans (Brutal/Common) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 🎨 Live Theme Switcher Controller (Floating HUD) -->
+    <div class="theme-switcher-hud" id="theme-switcher">
+        <div class="hud-header">
+            <span class="hud-dot"></span>
+            <span class="hud-title">SELECT DESIGN THEME</span>
+        </div>
+        <div class="hud-buttons">
+            <button class="theme-btn active" data-theme="theme-bento" title="Light Mode">
+                <i class="fa-solid fa-sun"></i> <span>Light Mode</span>
+            </button>
+            <button class="theme-btn" data-theme="theme-glass" title="Dark Mode">
+                <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 🌌 Cyber Grid Overlay (Optional overlay for Glass/Terminal themes) -->
+    <div class="grid-overlay"></div>
+
+    <!-- 🧭 Main Header & Navigation -->
+    <header class="main-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo-brand">
+                Sungmin<span>'s portfolio</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contributions" class="nav-link">Activity</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://github.com/sungmin6610" target="_blank" class="github-btn" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🚀 Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-content">
+            <div class="badge-wrapper">
+                <span class="status-badge"><span class="pulse-dot"></span> Available for Work</span>
+            </div>
+            <h1 class="hero-title">SEMICONDUCTOR & <br><span class="highlight-text">EQUIPMENT SOFTWARE ENGINEER</span></h1>
+            <p class="hero-subtitle">반도체 소자 원리부터 장비 제어 로직까지, 하드웨어와 소프트웨어의 교차점에서 시너지를 만드는 개발자 성민입니다. 공정 메커니즘에 대한 깊은 이해를 바탕으로 가장 효율적이고 안정적인 장비 소프트웨어를 구현합니다.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💡 About & Tech Stack Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">// PROFILE & TECH STACK</span>
+                <h2 class="section-title">ENGINEERING CAPABILITIES</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text-card">
+                    <h3>Who I Am</h3>
+                    <p class="intro-desc" style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem;">하드웨어와 소프트웨어를 모두 이해하는 <br>반도체 융합형 개발자 송성민입니다.</p>
+                    <p class="intro-desc">반도체 공학을 통해 MOSFET 소자 원리와 클린룸 공정 메커니즘을 탄탄히 다졌습니다. 단순히 코딩만 하는 것이 아니라, 하드웨어에 대한 이해를 바탕으로 장비 소프트웨어 기술과의 시너지를 만드는 것이 제 목표입니다.</p>
+                    <ul style="margin-top: 1.5rem; margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.75rem;"><strong style="color: var(--text-main);">공정 기반의 데이터 관리:</strong> 장비에서 나오는 데이터를 물리적·공정적 관점에서 깊이 있게 해석하고, 이를 바탕으로 정밀한 제어 로직을 설계합니다.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong style="color: var(--text-main);">설비 맞춤형 장비 제어:</strong> 설비 자체의 특성과 메커니즘을 고려하여, 현장에서 가장 효율적으로 동작하는 최적의 소프트웨어를 지향합니다.</li>
+                    </ul>
+                    <p class="intro-desc" style="font-style: italic; font-weight: 600; color: var(--color-primary);">"공정과 장비 소프트웨어 사이를 잇는 연결고리가 되어, 생산성과 설비 효율을 최고의 가치로 끌어올리겠습니다."</p>
+                </div>
+                <div class="tech-stack-card" id="skills">
+                    <h3>Core Stack</h3>
+                    <div class="tech-groups">
+                        <div class="tech-group">
+                            <h4 class="group-title">Frontend</h4>
+                            <div class="tech-badges">
+                                <span class="badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                <span class="badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                <span class="badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                <span class="badge"><i class="fa-brands fa-react"></i> React</span>
+                            </div>
+                        </div>
+                        <div class="tech-group">
+                            <h4 class="group-title">Backend</h4>
+                            <div class="tech-badges">
+                                <span class="badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                                <span class="badge"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+                                <span class="badge"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="tech-group">
+                            <h4 class="group-title">DevOps & Tools</h4>
+                            <div class="tech-badges">
+                                <span class="badge"><i class="fa-brands fa-docker"></i> Docker</span>
+                                <span class="badge"><i class="fa-brands fa-git-alt"></i> Git & Github</span>
+                                <span class="badge"><i class="fa-solid fa-cloud"></i> AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛠️ Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">// RECENT WORKS</span>
+                <h2 class="section-title">CREATIVE SOLUTIONS</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-chart-line placeholder-icon"></i>
+                        <span class="tech-overlay">React // Fastify</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI-Powered Analytics Dashboard</h3>
+                        <p class="project-desc">실시간 AI 모델 예측치와 데이터 통계를 대시보드로 시각화하는 모던 웹 애플리케이션 프로젝트 뼈대입니다.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Chart.js</span>
+                            <span>WebSocket</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                            <a href="#" class="proj-link"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-shield-halved placeholder-icon"></i>
+                        <span class="tech-overlay">Go // Kubernetes</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Zero-Trust Security Gateway</h3>
+                        <p class="project-desc">인증 및 권한 위임을 분산 환경에서 안전하게 처리하는 고성능 API 게이트웨이 서비스 백엔드 뼈대입니다.</p>
+                        <div class="project-tags">
+                            <span>Go</span>
+                            <span>gRPC</span>
+                            <span>Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                            <a href="#" class="proj-link"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-network-wired placeholder-icon"></i>
+                        <span class="tech-overlay">Three.js // WebGL</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Interactive 3D Orbit Galaxy</h3>
+                        <p class="project-desc">웹 브라우저 상에 3차원 우주 궤도와 행성 탐사 환경을 렌더링하는 WebGL 기반 인터랙티브 쇼케이스 뼈대입니다.</p>
+                        <div class="project-tags">
+                            <span>Three.js</span>
+                            <span>WebGL</span>
+                            <span>GLSL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                            <a href="#" class="proj-link"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📅 Github Contributions Visual Skeleton -->
+    <section class="contributions-section" id="contributions">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">// GITHUB ACTIVITY</span>
+                <h2 class="section-title">CONTINUOUS COMMITMENT</h2>
+            </div>
+            
+            <div class="contributions-card">
+                <div class="contrib-header">
+                    <div class="user-meta">
+                        <i class="fa-brands fa-github github-avatar"></i>
+                        <div>
+                            <h4><a href="https://github.com/sungmin6610" target="_blank" style="text-decoration: none; color: inherit;">@sungmin6610</a></h4>
+                            <p>365 Days Dev Contribution Graph</p>
+                        </div>
+                    </div>
+                    <div class="contrib-stats">
+                        <div class="stat-box">
+                            <span class="stat-num" id="github-commits">...</span>
+                            <span class="stat-lbl">Yearly Commits</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num" id="github-repos">...</span>
+                            <span class="stat-lbl">Repositories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fake Github Grid -->
+                <div class="contrib-grid-wrapper">
+                    <div class="contrib-grid" id="fake-contrib-grid">
+                        <!-- Dynamically populated fake grid tiles via JS -->
+                    </div>
+                </div>
+                
+                <div class="contrib-footer">
+                    <span>Less</span>
+                    <ul class="color-indicators">
+                        <li class="tile level-0"></li>
+                        <li class="tile level-1"></li>
+                        <li class="tile level-2"></li>
+                        <li class="tile level-3"></li>
+                        <li class="tile level-4"></li>
+                    </ul>
+                    <span>More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✉️ Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <span class="sub-title">// TALK TO ME</span>
+                    <h2>LET'S BUILD SOMETHING AWESOME</h2>
+                    
+                    <div class="contact-channels">
+                        <div class="channel-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span class="label">Email Address</span>
+                                <span class="value">developer@example.com</span>
+                            </div>
+                        </div>
+                        <div class="channel-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <span class="label">Location</span>
+                                <span class="value">Seoul, South Korea</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Skeleton -->
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="5" placeholder="I would like to collaborate on..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👣 Footer -->
+    <footer class="main-footer">
+        <div class="container footer-wrapper">
+            <p class="copyright">&copy; 2026 Developer Portfolio Skeleton. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/sungmin6610" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

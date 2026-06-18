@@ -10,8 +10,8 @@ navbar_entries:
 
 project_entries:
   - title: STMS2
-    url: /STMS2/STMS2_Program.zip
-    desc: 재고관리프로그램 (STMS2) - 클릭하여 다운로드 후 실행
+    url: /STMS2/
+    desc: 재고관리프로그램 (STMS2)
 
   - title: Python & AI software programing
     url: /python-hub/

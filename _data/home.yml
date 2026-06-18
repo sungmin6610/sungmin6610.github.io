@@ -9,10 +9,6 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: STMS2
-    url: /STMS2/
-    desc: 재고관리프로그램 (STMS2)
-
   - title: Python & AI software programing
     url: /python-hub/
     desc: 파이썬 기초부터 API 활용, 게임 제작까지의 모든 학습 과정
@@ -69,4 +65,7 @@ misc_entries:
           - title: it is easy to use, see _data/home.yml to see how to configure it.
             url: false
 
-
+old_project_entries:
+  - title: STMS2
+    url: /STMS2/
+    desc: 재고관리프로그램 (STMS2)

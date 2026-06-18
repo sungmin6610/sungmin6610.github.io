@@ -20,23 +20,18 @@ const mockSalesKpi = {
 
 const mockTopItems = {
     status: 'success',
-    items: [
-        {name: 'Stud BOLT', revenue: 15000000},
-        {name: 'COOLING BLOCK', revenue: 12000000},
-        {name: 'COOLING BLOCK RIGHT', revenue: 8000000},
-        {name: 'COOLING BLOCK LEFT', revenue: 5000000},
-        {name: 'COOLING BLOCK RIGHT HD550', revenue: 2000000}
-    ]
+    labels: ['Stud BOLT', 'COOLING BLOCK', 'COOLING BLOCK RIGHT', 'COOLING BLOCK LEFT', 'COOLING BLOCK RIGHT HD550'],
+    data: [15000000, 12000000, 8000000, 5000000, 2000000]
 };
 
 const mockRecentSales = {
     status: 'success',
-    sales: [
-        {날짜: '2023-10-25', 품명: 'Stud BOLT', 매출액: 450000},
-        {날짜: '2023-10-25', 품명: 'COOLING BLOCK', 매출액: 320000},
-        {날짜: '2023-10-24', 품명: 'COOLING BLOCK RIGHT', 매출액: 150000},
-        {날짜: '2023-10-23', 품명: 'Stud BOLT', 매출액: 80000},
-        {날짜: '2023-10-22', 품명: 'COOLING BLOCK LEFT', 매출액: 210000}
+    data: [
+        {날짜: '2023-10-25', 품명: 'Stud BOLT', 매출액: 450000, 수량: 10},
+        {날짜: '2023-10-25', 품명: 'COOLING BLOCK', 매출액: 320000, 수량: 8},
+        {날짜: '2023-10-24', 품명: 'COOLING BLOCK RIGHT', 매출액: 150000, 수량: 5},
+        {날짜: '2023-10-23', 품명: 'Stud BOLT', 매출액: 80000, 수량: 2},
+        {날짜: '2023-10-22', 품명: 'COOLING BLOCK LEFT', 매출액: 210000, 수량: 7}
     ]
 };
 
@@ -81,15 +76,11 @@ window.fetch = async function() {
                 message: '테스트 환경이므로 수정 내용이 가상으로 반영되었습니다.'
             });
         }
-        // Add trend mock
         if (url.includes('/api/sales/trend')) {
             return jsonResponse({
                 status: 'success',
                 labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월'],
-                datasets: [{
-                    label: '월별 매출',
-                    data: [1200, 1900, 3000, 5000, 2000, 3000, 4500]
-                }]
+                data: [12000000, 19000000, 30000000, 50000000, 20000000, 30000000, 45000000]
             });
         }
     }

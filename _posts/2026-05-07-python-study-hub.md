@@ -33,3 +33,4 @@ permalink: /python-hub/
 * [머신러닝: 8. K_Fold_교차검증]({% post_url 2026-06-18-ml-8-k-fold-교차검증 %})
 * [머신러닝: 9. 그리드서치]({% post_url 2026-06-18-ml-9-그리드서치 %})
 * [머신러닝: 10. 신용카드이상탐지]({% post_url 2026-06-18-ml-10-신용카드이상탐지 %})
+* [머신러닝: 11. finaltest]({% post_url 2026-06-24-ml-11-finaltest %})
